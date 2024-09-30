@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  width: 100%;
+  background: #eaeaea;
+  color: #000;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #eaeaea;
+  padding: 10px 20px;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar-logo img {
+  width: 100px;
+  height: auto;
+}
+
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-item {
+  position: relative;
+  margin-left: 20px;
+}
+
+.navbar-item a {
+  text-decoration: none;
+  color: #000000;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.navbar-item a:hover {
+  background-color: #e0e0e0;
+  border-radius: 5px;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%; /* Justo debajo del elemento del menú principal */
+  left: 0;
+  background-color: #ffffff;
+  list-style: none;
+  padding: 10px 0;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  z-index: 1001; /* Asegura que el dropdown esté por encima de otros elementos */
+  min-width: 200px; /* Asegura que haya suficiente espacio para los submenús */
+}
+
+.navbar-item:hover .dropdown {
+  display: block; /* Muestra el dropdown cuando el elemento principal está en hover */
+}
+
+/* Elementos dentro del dropdown */
+.dropdown li {
+  margin: 0;
+}
+
+.dropdown li a {
+  color: #000000;
+  padding: 10px 20px;
+  display: block;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.dropdown li a:hover {
+  background-color: #f0f0f0;
+}
+
+.navbar-item:hover .dropdown {
+  display: block;
+}
+
+/* .hero {
+  background-image: url("../img/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 65vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin: 0;
+}
+.hero h1,
+.hero p {
+  filter: drop-shadow(0 0 4px #000);
+} */
+
+/* Main content */
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Hero section styling */
+/* Ajuste alternativo para el hero directamente */
+.hero {
+  position: relative; /* Necesario para que el pseudo-elemento esté dentro del hero */
+  background-image: url("../img/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 100px 20px;
+  text-align: center;
+  border-radius: 8px;
+  margin-bottom: 40px;
+  overflow: hidden; /* Asegura que el pseudo-elemento no sobresalga */
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Color negro con un 50% de opacidad */
+  z-index: 1; /* Asegura que el overlay esté por debajo del texto */
+}
+
+.hero h1,
+.hero p {
+  position: relative; /* Asegura que el texto esté por encima del overlay */
+  z-index: 2; /* Asegura que el texto esté por encima del pseudo-elemento oscuro */
+  filter: drop-shadow(0 0 4px #000);
+}
+
+/* News Section */
+.news-section {
+  margin-bottom: 40px;
+}
+
+.news-section h2 {
+  margin-bottom: 20px;
+}
+
+.news-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.news-item {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: calc(33.333% - 20px);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.news-item:hover {
+  transform: translateY(-5px);
+}
+
+.news-item img {
+  width: 100%;
+  height: auto;
+}
+
+.news-item h3 {
+  padding: 15px;
+  font-size: 1.2em;
+}
+
+.news-item p {
+  padding: 0 15px 15px;
+  font-size: 0.9em;
+}
+
+/* Articles Section */
+.articles-section {
+  margin-bottom: 40px;
+}
+
+.articles-section h2 {
+  margin-bottom: 20px;
+}
+
+.articles-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.article-item {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: calc(33.333% - 20px);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.article-item:hover {
+  transform: translateY(-5px);
+}
+
+.article-item img {
+  width: 100%;
+  height: auto;
+}
+
+.article-item h3 {
+  padding: 15px;
+  font-size: 1.2em;
+}
+
+.article-item p {
+  padding: 0 15px 15px;
+  font-size: 0.9em;
+}
